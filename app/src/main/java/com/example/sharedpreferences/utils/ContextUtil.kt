@@ -19,5 +19,10 @@ class ContextUtil {
             pref.edit().putString(USER_ID, inputId).apply()
         }
 
+        fun getUserId(context: Context): String{
+            val pref = context.getSharedPreferences(prefName.Context.MODE_PRIVATE)
+            return  pref.getString(USER_ID,"")!!
+        }
+
     }
 }

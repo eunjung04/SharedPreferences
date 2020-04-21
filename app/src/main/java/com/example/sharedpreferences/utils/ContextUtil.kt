@@ -11,6 +11,7 @@ class ContextUtil {
         val prefName="MyPref" //프로젝트별로 맞는 이름을 작명.
 //메모장에 저장될 항목의 이름.
         val USER_ID="USER_ID"
+        val ID_SAVE="ID_SAVE"
 
         fun setUserId(context: Context, inputId : String){
             //메모장 파일을 여는것과 비슷한 행위
@@ -20,8 +21,18 @@ class ContextUtil {
         }
 
         fun getUserId(context: Context): String{
-            val pref = context.getSharedPreferences(prefName.Context.MODE_PRIVATE)
+            val pref=context.getSharedPreferences(prefName, Context.MODE_PRIVATE)
             return  pref.getString(USER_ID,"")!!
+        }
+
+        fun setSaveId(context: Context, isSave:Boolean){
+            val pref=context.getSharedPreferences(prefName, Context.MODE_PRIVATE)
+            pref.edit().putBoolean(ID_SAVE, isSave).apply()
+        }
+
+        fun getSaveId(context: Context): Boolean{
+            val pref=context.getSharedPreferences(prefName, Context.MODE_PRIVATE)
+            return pref.getBoolean(ID_SAVE, false)
         }
 
     }

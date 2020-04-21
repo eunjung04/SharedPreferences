@@ -30,12 +30,16 @@ class MainActivity : BaseAcitivity() {
 
         login.setOnClickListener {
 
-            if (pwEdt.text.toString()=="1234"){
+            if (pwEdt.text.toString() == "1234") {
+                if (idSaveCheckBox.isChecked) {
+
+                    val inputId = idEdt.text.toString()
+                    ContextUtil.setUserId(mContext, inputId)
+                }
 
             }
         }
-            val inputId = idEdt.text.toString()
-            ContextUtil.setUserId(mContext, inputId)
+
 
     }
 

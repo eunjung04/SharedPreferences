@@ -9,11 +9,12 @@ abstract class BaseAcitivity : AppCompatActivity() {
 
     val mContext=this
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    abstract fun setupEvents()
+    abstract fun setValue()
+
+
 
     }
 
 
-    }
-}
+

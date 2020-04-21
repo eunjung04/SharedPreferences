@@ -2,6 +2,7 @@ package com.example.sharedpreferences
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -9,4 +10,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
+
+    override fun setupEvents() {
+
+        login.setOnClickListener {
+            val input
+        }
+
+
+
+    }
+
+    override fun setValue() {
+
+    }
+
 }

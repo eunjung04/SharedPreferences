@@ -20,10 +20,22 @@ class MainActivity : BaseAcitivity() {
         idSaveCheckBox.setOnCheckedChangeListener { buttonView, isChecked ->
             ContextUtil.setSaveId(mContext,isChecked)
 
-            if(isChecked){
-                Toast.makeText(mContext, "아이디를 저장합니다.")
+            if (isChecked) {
+                Toast.makeText(mContext, "아이디를 저장합니다.", Toast.LENGTH_SHORT).show()
+            }
+            else {
+                Toast.makeText(mContext, "아이디 저장을 해제합니다.", Toast.LENGTH_SHORT).show()
+            }
         }
+
+        login.setOnClickListener {
+
+            if (pwEdt.text.toString()=="1234"){
+
+            }
         }
+            val inputId = idEdt.text.toString()
+            ContextUtil.setUserId(mContext, inputId)
 
     }
 
